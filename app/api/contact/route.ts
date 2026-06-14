@@ -1,7 +1,9 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
 const CONTACT_TO = process.env.CONTACT_TO_EMAIL ?? "elnagarmoaz0@gmail.com";
+const FROM_EMAIL =
+  process.env.RESEND_FROM_EMAIL ?? "Portfolio Contact <onboarding@resend.dev>";
 
 const inquiryLabels: Record<string, string> = {
   audit: "Quality Audit",
@@ -20,6 +22,18 @@ function escapeHtml(value: string) {
 
 export async function POST(request: Request) {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+
+    if (!apiKey || apiKey.includes("REPLACE_WITH")) {
+      return NextResponse.json(
+        {
+          error:
+            "Email service is not configured. Add RESEND_API_KEY to .env.local, then restart the dev server.",
+        },
+        { status: 503 },
+      );
+    }
+
     const body = await request.json();
     const name = String(body.name ?? "").trim();
     const email = String(body.email ?? "").trim();
@@ -38,37 +52,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
     }
 
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-
-    if (!smtpUser || !smtpPass) {
-      console.error("Missing SMTP_USER or SMTP_PASS environment variables.");
-      return NextResponse.json(
-        { error: "Email service is not configured yet." },
-        { status: 503 },
-      );
-    }
-
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST ?? "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT ?? 587),
-      secure: false,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-    });
-
     const inquiryLabel = inquiryLabels[type] ?? "General";
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safeCompany = escapeHtml(company || "Not provided");
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${smtpUser}>`,
-      to: CONTACT_TO,
-      replyTo: `"${name}" <${email}>`,
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: [CONTACT_TO],
+      replyTo: email,
       subject: `New inquiry: ${inquiryLabel} — ${name}`,
       text: [
         `Name: ${name}`,
@@ -90,6 +84,14 @@ export async function POST(request: Request) {
         <p>${safeMessage}</p>
       `,
     });
+
+    if (error) {
+      console.error("Resend API error:", error);
+      return NextResponse.json(
+        { error: error.message ?? "Failed to send message. Please try again later." },
+        { status: 502 },
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
