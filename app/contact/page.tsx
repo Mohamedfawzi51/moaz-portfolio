@@ -46,7 +46,7 @@ export default function ContactPage() {
                 </h2>
                 <div className="space-y-6">
                   <a
-                    href="mailto:specialist@quality.pro"
+                    href="mailto:elnagarmoaz0@gmail.com"
                     className="group -ml-4 flex items-start rounded-lg p-4 transition-all hover:bg-surface-container-low"
                   >
                     <div className="mr-4 rounded bg-surface-container p-2 text-primary">
@@ -57,7 +57,7 @@ export default function ContactPage() {
                         Email Address
                       </p>
                       <p className="font-body text-body-md font-semibold text-primary">
-                        specialist@quality.pro
+                        elnagarmoaz0@gmail.com
                       </p>
                     </div>
                   </a>
