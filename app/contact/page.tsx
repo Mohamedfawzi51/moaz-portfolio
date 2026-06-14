@@ -4,6 +4,8 @@ import { ContactForm } from "../components/ContactForm";
 import { FadeInSection } from "../components/FadeInSection";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { WhatsAppButton } from "../components/WhatsAppButton";
+import { contact } from "../data/contact";
 
 export const metadata: Metadata = {
   title: "Contact | QualitySpecialist",
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
 const availability = [
   "Accepting Q3-Q4 Contracts",
   "Remote & On-site Audits",
-  "Average Response: 4h",
+  "WhatsApp & email replies within 4h",
 ];
 
 export default function ContactPage() {
@@ -36,6 +38,9 @@ export default function ContactPage() {
               or strategic QA consulting, I am ready to ensure your systems perform
               with absolute precision.
             </p>
+            <div className="mt-8">
+              <WhatsAppButton variant="primary" />
+            </div>
           </header>
 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-24">
@@ -46,7 +51,7 @@ export default function ContactPage() {
                 </h2>
                 <div className="space-y-6">
                   <a
-                    href="mailto:elnagarmoaz0@gmail.com"
+                    href={`mailto:${contact.email}`}
                     className="group -ml-4 flex items-start rounded-lg p-4 transition-all hover:bg-surface-container-low"
                   >
                     <div className="mr-4 rounded bg-surface-container p-2 text-primary">
@@ -57,13 +62,17 @@ export default function ContactPage() {
                         Email Address
                       </p>
                       <p className="font-body text-body-md font-semibold text-primary">
-                        elnagarmoaz0@gmail.com
+                        {contact.email}
                       </p>
                     </div>
                   </a>
 
+                  <WhatsAppButton variant="channel" />
+
                   <a
-                    href="#"
+                    href={contact.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group -ml-4 flex items-start rounded-lg p-4 transition-all hover:bg-surface-container-low"
                   >
                     <div className="mr-4 rounded bg-surface-container p-2 text-primary">
@@ -74,7 +83,7 @@ export default function ContactPage() {
                         LinkedIn Profile
                       </p>
                       <p className="font-body text-body-md font-semibold text-primary">
-                        linkedin.com/in/qualityspecialist
+                        {contact.linkedinLabel}
                       </p>
                     </div>
                   </a>

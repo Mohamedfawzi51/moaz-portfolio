@@ -14,6 +14,7 @@ import {
 import { FadeInSection } from "./components/FadeInSection";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { WhatsAppButton } from "./components/WhatsAppButton";
 import { projects } from "./data/projects";
 import profile from "../public/moaz-profile.png"
 
@@ -289,13 +290,18 @@ export default function Home() {
                   preparation, or permanent specialist roles in precision-focused
                   industries.
                 </p>
-                <div className="flex flex-col gap-4 sm:flex-row">
+                <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                   <Link
                     href="/contact"
                     className="rounded bg-on-primary px-10 py-4 text-center font-display text-label-md text-primary transition-colors hover:bg-tertiary-fixed"
                   >
                     Start a Conversation
                   </Link>
+                  <WhatsAppButton
+                    variant="on-dark"
+                    label="WhatsApp"
+                    className="px-10 py-4"
+                  />
                   <Link
                     href="/contact"
                     className="rounded border border-on-primary px-10 py-4 text-center font-display text-label-md text-on-primary transition-colors hover:bg-on-primary/10"

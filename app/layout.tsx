@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, Source_Serif_4 } from "next/font/google";
+import { WhatsAppFloat } from "./components/WhatsAppButton";
 import "./globals.css";
 
 const hankenGrotesk = Hanken_Grotesk({
@@ -33,6 +34,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-surface text-on-surface selection:bg-secondary-container">
         {children}
+        <WhatsAppFloat />
       </body>
     </html>
   );
