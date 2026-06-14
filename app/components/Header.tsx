@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import { Menu, X } from "lucide-react";
@@ -81,7 +82,7 @@ export function Header() {
           onClick={closeMobile}
           className="font-display text-headline-md font-bold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
         >
-          QualitySpecialist
+        Moaz Elnagar
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
