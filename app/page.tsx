@@ -15,7 +15,7 @@ import { FadeInSection } from "./components/FadeInSection";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { projects } from "./data/projects";
-import profile from "../public/moaz.png";
+import profile from "../public/moaz.jpeg";
 
 const metrics = [
   { value: "50+", label: "Successful Audits" },
