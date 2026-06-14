@@ -15,6 +15,7 @@ import { FadeInSection } from "./components/FadeInSection";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { projects } from "./data/projects";
+import profile from "../public/moaz.png";
 
 const metrics = [
   { value: "50+", label: "Successful Audits" },
@@ -102,7 +103,7 @@ export default function Home() {
             <div className="relative md:col-span-5">
               <div className="aspect-[4/5] overflow-hidden rounded-lg border border-outline-variant bg-surface-container-highest shadow-sm">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4LIWwmD4mH47lVmqQZXJxfY-RU0NDWAiu2S870fwuLPWosdVVv_Wx5K9ZPaw0dPr3eyW1ZOMJmNZ_HXvS99zqlc1u9HO0RrLqRWrxB6cnBjhENvF9eKx8UdM95qcCi4DQjleAe19Qw0wsWXKC1FOQQTM_k71fTSVRP74umfrE97d8CsBxX_wIPOC-j6dridCSVvXP0wLG0r_woKTK-y1ao2efVt7MPnuhKGtM_W2TMESVHDKHwHC2uqVbn-xB0vHYmlJgN03lI3LV"
+                  src={profile}
                   alt="Professional Quality Specialist"
                   width={480}
                   height={600}
