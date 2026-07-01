@@ -16,7 +16,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { projects } from "./data/projects";
-import profile from "../public/moaz-profile.png"
+import profile from "../public/moaz-profile.jpeg";
 
 const metrics = [
   { value: "50+", label: "Successful Audits" },

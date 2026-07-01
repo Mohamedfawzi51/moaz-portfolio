@@ -6,7 +6,7 @@ import { FadeInSection } from "../components/FadeInSection";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { projects } from "../data/projects";
-
+import profile from "../../public/moaz2-profile.jpeg";
 export const metadata: Metadata = {
   title: "Projects & Case Studies | QualitySpecialist",
   description:
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
 
             <FadeInSection className="relative aspect-square overflow-hidden rounded-xl border border-outline-variant bg-surface-container-high md:aspect-video">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4LIWwmD4mH47lVmqQZXJxfY-RU0NDWAiu2S870fwuLPWosdVVv_Wx5K9ZPaw0dPr3eyW1ZOMJmNZ_HXvS99zqlc1u9HO0RrLqRWrxB6cnBjhENvF9eKx8UdM95qcCi4DQjleAe19Qw0wsWXKC1FOQQTM_k71fTSVRP74umfrE97d8CsBxX_wIPOC-j6dridCSVvXP0wLG0r_woKTK-y1ao2efVt7MPnuhKGtM_W2TMESVHDKHwHC2uqVbn-xB0vHYmlJgN03lI3LV"
+                src={profile}
                 alt="Quality audit workspace"
                 width={640}
                 height={360}

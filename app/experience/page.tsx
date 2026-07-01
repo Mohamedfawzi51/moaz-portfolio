@@ -17,35 +17,34 @@ import { Header } from "../components/Header";
 export const metadata: Metadata = {
   title: "Experience & Skills | QualitySpecialist",
   description:
-    "A comprehensive overview of quality assurance experience, technical competencies, and professional timeline.",
-};
+"A comprehensive overview of my journey as a Quality Specialist holding a Master’s degree in Statistical Quality Control and Quality Assurance. Dedicated to continuous process optimization, rigorous ISO compliance, and data-driven excellence."};
 
 const skillGroups = [
   {
     icon: FlaskConical,
     title: "Automation & Testing",
     span: "md:col-span-2",
-    tags: ["Selenium", "Appium", "JUnit", "Postman", "Cypress", "PyTest"],
+    tags: ["Minitab", "SPC Charts", "Design of Experiments (DOE)", "ANOVA & Regression", "Advanced Excel"],
   },
   {
     icon: ClipboardCheck,
-    title: "Management",
+    title: "Quality Methodologies",
     span: "",
-    tags: ["JIRA", "Confluence", "Trello"],
+    tags: ["six sigma", "Lean Management", "Root Cause Analysis (RCA)", "FMEA", "Total Quality Management (TQM)"],
   },
   {
     icon: Database,
-    title: "Data",
+    title: "Standards & Auditing",
     span: "",
-    tags: ["SQL", "MongoDB"],
+    tags: ["ISO9001", "Internal Auditing","CAPA System","Compliance Management"],
   },
 ];
 
 const methodologies = [
-  "Six Sigma Yellow Belt",
-  "Lean Management",
-  "ISO 9001 Auditing",
-  "Agile/Scrum",
+  "Statistical Process Control (SPC)",
+  "Six Sigma Green / Black Belt",
+  "ISO 9001:2015 Quality Systems",
+  "Root Cause Analysis and CAPA",
 ];
 
 const timeline = [
@@ -62,9 +61,7 @@ const timeline = [
         non-conformities by 40% within the first fiscal year.
       </>,
       <>
-        Designed and maintained automated regression suites using{" "}
-        <strong>Selenium WebDriver</strong> and Java, achieving 85% test
-        coverage for core financial modules.
+        Process Control (SPC) and capability analysis via Minitab, identifying critical process variations and improving production yield by 15%
       </>,
       <>
         Mentored a team of 4 junior analysts on Root Cause Analysis (RCA)
@@ -79,18 +76,16 @@ const timeline = [
     company: "Vertex Digital Solutions",
     highlights: [
       <>
-        Executed comprehensive <strong>manual testing</strong> cycles for
-        high-traffic e-commerce platforms, documenting over 500+ critical bugs
-        in JIRA.
+        Executed comprehensive <strong>quality inspection </strong> cycles for
+        high-volume production lines, documenting and analyzing over 500+ non-conformances to prevent defect recurrence.
       </>,
       <>
-        Collaborated with cross-functional Dev teams to perform{" "}
+        Collaborated with cross-functional and engineering teams to perform{" "}
         <strong>Root Cause Analysis</strong> on high-priority production
-        incidents, improving resolution time by 15%.
+        incidents, improving issue resolution time by 15%.
       </>,
       <>
-        Optimized SQL queries for backend data validation, ensuring 100% data
-        integrity across complex migration projects.
+        Optimized data collection methods for operational quality validation ensuring 100% data integrity across complex process improvements and compliance projects.  
       </>,
     ],
   },
@@ -105,8 +100,7 @@ const timeline = [
         evaluations for assembly line hardware components.
       </>,
       <>
-        Maintained technical documentation and user acceptance testing (UAT)
-        scripts for internal ERP tools.
+        Maintained technical documentation and standard operating procedures (SOPs) to ensure operational compliance and continuous improvement.
       </>,
     ],
   },
@@ -131,9 +125,16 @@ export default function ExperiencePage() {
               Precision in Every Lifecycle.
             </h1>
             <p className="max-w-lg text-body-lg text-on-surface-variant">
-              A comprehensive overview of my three-year journey through the
-              rigorous landscapes of Quality Assurance, ISO compliance, and process
-              optimization.
+             A comprehensive overview
+of my journey as a
+Quality Specialist holding
+a Master’s degree in
+Statistical Quality Control
+and Quality Assurance.
+Dedicated to continuous
+process optimization,
+rigorous ISO compliance,
+and data-driven excellence.
             </p>
           </FadeInSection>
 
@@ -157,17 +158,22 @@ export default function ExperiencePage() {
                   Technical Core Competencies
                 </h2>
                 <p className="text-body-md text-on-surface-variant">
-                  Audited toolset for modern software and process engineering.
+                 Advanced tools and
+methodologies for
+data-driven quality
+control and process
+excellence.
+
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 {skillGroups.map((group) => {
                   const Icon = group.icon;
                   return (
                     <div
                       key={group.title}
-                      className={`rounded-xl border border-outline-variant bg-surface p-8 transition-all hover:shadow-[0px_4px_20px_rgba(15,23,42,0.05)] ${group.span}`}
+                      className={`rounded-xl border border-outline-variant bg-surface p-8 transition-all hover:shadow-[0px_4px_20px_rgba(15,23,42,0.05)]`}
                     >
                       <div className="mb-6 flex items-center gap-3">
                         <Icon className="h-6 w-6 text-on-tertiary-container" />
